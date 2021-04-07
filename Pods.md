@@ -6,9 +6,12 @@ A pod is the basic execution unit of a K8s application the smallest and simplest
 
 Running a Pod
 
-kubectl run podnginx --image=nginx:alpine
+kubectl run my-nginx --image=nginx:alpine
 kubectl get pods
 kubectl get all
+
+kubectl describe pod my-nginx
+kubectl get pod my-nginx -o yaml
 
 
 Expoose a pod port
@@ -41,3 +44,11 @@ kubectl apply -f ./files/nginx.pod.yaml
 
 #Delete POD Using YAML file that created it
 kubectl delete -f ./files/nginx.pod.yaml 
+
+Access in the container inside Pod
+
+kubectl exec my-nginx -it sh
+
+
+Pod Health
+

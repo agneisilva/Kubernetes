@@ -24,7 +24,6 @@ kubectl create [resource]
 
 kubectl apply [resource]
 
-
 Aliasing kubeclt
 
 #powershell
