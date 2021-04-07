@@ -22,10 +22,22 @@ Delete a pod
 kubectl delete pod [pod name]
 kubectl delete pod podnginx
 
-kubectl delete deployment [podname]
 
+Creating or Apply Changes to a Pod Using YAML
 
+#Performe a "trial" create and also validade the YAML
+kubectl create -f ./files/nginx.pod.yaml --dry-run --validate=true
 
+#Create a Pod from YAML
+#Will error if Pod already exists
+kubectl create -f ./files/nginx.pod.yaml --dry-run --validate=true
 
+#Alternate way to create or apply changes to a Pod from YAML
+kubectl apply -f ./files/nginx.pod.yaml 
 
+#Use --save-config when you ant to use 
+#Kubectl apply in the future
+kubectl apply -f ./files/nginx.pod.yaml 
 
+#Delete POD Using YAML file that created it
+kubectl delete -f ./files/nginx.pod.yaml 
